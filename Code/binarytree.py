@@ -5,9 +5,9 @@ class BinaryTreeNode(object):
 
     def __init__(self, data):
         """Initialize this binary tree node with the given data."""
-        self.data = data
-        self.left = None
-        self.right = None
+        self.data = data  # node's data element
+        self.left = None  # node's left child
+        self.right = None  # node's right child
 
     def __repr__(self):
         """Return a string representation of this binary tree node."""
@@ -16,11 +16,20 @@ class BinaryTreeNode(object):
     def is_leaf(self):
         """Return True if this node is a leaf (has no children)."""
         # TODO: Check if both left child and right child have no value
-        return ... and ...
+        if self.data:
+            if data < self.data:
+                if self.left is None:
+                    self.left = Node(data)  # b/c no child
+                else:
+                    self.right.insert(data)
+            else:
+                self.data = data
+        # return True and ...
 
     def is_branch(self):
         """Return True if this node is a branch (has at least one child)."""
         # TODO: Check if either left child or right child has a value
+        if
         return ... or ...
 
     def height(self):
@@ -39,8 +48,8 @@ class BinarySearchTree(object):
 
     def __init__(self, items=None):
         """Initialize this binary search tree and insert the given items."""
-        self.root = None
-        self.size = 0
+        self.root = None  # tree's root node
+        self.size = 0  # tracks number of nodes in constant time
         if items is not None:
             for item in items:
                 self.insert(item)
