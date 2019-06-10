@@ -8,27 +8,39 @@ import string
 
 
 def is_palindrome(text):
-    """A string of characters is a palindrome if it reads the same forwards and
-    backwards, ignoring punctuation, whitespace, and letter casing."""
-    # implement is_palindrome_iterative and is_palindrome_recursive below, then
-    # change this to call your implementation to verify it passes all tests
+    """A string of characters is a palindrome if it reads the same forwards and backwards, ignoring punctuation, whitespace, and letter casing."""
     assert isinstance(text, str), 'input is not a string: {}'.format(text)
     return is_palindrome_iterative(text)
-    # return is_palindrome_recursive(text)
+    return is_palindrome_recursive(text)
 
 
 def is_palindrome_iterative(text):
-    # TODO: implement the is_palindrome function iteratively here
-    pass
-    # once implemented, change is_palindrome to call is_palindrome_iterative
-    # to verify that your iterative implementation passes all tests
+    """is_palindrome_iterative return True if input text is a palindrome, and false if not"""
+    # Edge cases? Check if input = None or is weird
+    palindrome = None
+    reverse_text = text.reverse()
+    if text == reverse_text:
+        palindrome = True
+    else:
+        palindome = False
+
+    # Quick check? Does 1st letter = last letter
+    # for i in range(len(text)):
+    #     # check if work spelled same way backward forward
+    #     if blank:
+    #         palindrome = True
+    #     else:
+    #         palindrome = False
+
+    return palindrome
 
 
 def is_palindrome_recursive(text, left=None, right=None):
-    # TODO: implement the is_palindrome function recursively here
-    pass
-    # once implemented, change is_palindrome to call is_palindrome_recursive
-    # to verify that your iterative implementation passes all tests
+    """is_palindrome_recursive return True if input text is a palindrome, and false if not"""
+    # check if n is one of the base cases
+    palindrome = None
+
+    return is_palindrome_recursive(text)
 
 
 def main():
@@ -46,4 +58,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    print(is_palindrome_iterative(text))
+    print(is_palindrome_recursive(text))

@@ -1,9 +1,9 @@
 def factorial(n):
-    """factorial(n) returns the product of the integers 1 through n for n >= 0,otherwise raises ValueError for n < 0 or non-integer n"""
-    # check if n is invalid input (neg, not integer)
+    """factorial(n) returns the product of the integers 1 through n for n >= 0, otherwise raises ValueError for n < 0 or non-integer n"""
+    # check if n is invalid input
     if not isinstance(n, int) or n < 0:
         raise ValueError('factorial is undefined for n = {}'.format(n))
-    # if input valid, return product
+    # if input valid, call on factorial_iterative or factorial_recurssive to return product
     return factorial_iterative(n)
     return factorial_recursive(n)
 

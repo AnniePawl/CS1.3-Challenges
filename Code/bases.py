@@ -1,7 +1,7 @@
 #!python
 
 import string
-# Hint: Use these string constants to encode/decode hexadecimal digits and more
+# Use these string constants to encode/decode hexadecimal digits and more
 # string.digits is '0123456789'
 # string.hexdigits is '0123456789abcdefABCDEF'
 # string.ascii_lowercase is 'abcdefghijklmnopqrstuvwxyz'
@@ -11,30 +11,33 @@ import string
 
 
 def decode(digits, base):
-    """Decode given digits in given base to number in base 10.
-    digits: str -- string representation of number (in given base)
-    base: int -- base of given number
-    return: int -- integer representation of number (in base 10)"""
-    # Takes in Binary Input 
-    # Evaluate number of digits to figure out what power we're dealing with (power is 1 less than number of places)
-    # Conidtion to account for zeros (ignored)
-    # If a one is found, 
-
-
-
+    """Decodes digits in any base to a number.
+    digits: string representation of number (in given base)
+    base: base of given number
+    return: integer representation of number (in base 10)"""
     # Handle up to base 36 [0-9a-z]
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
-    # TODO: Decode digits from binary (base 2)
-    # ...
-    # TODO: Decode digits from hexadecimal (base 16)
-    # ...
-    # TODO: Decode digits from any base (2 up to 36)
-    # ...
 
+    # Takes in Binary Input
+    # Evaluate number of digits to figure out what power we're dealing with (power is 1 less than number of places)
+    factorial = 1
+    bit_place = len(digit_list) - 1
+    # Conidtion to account for zeros (ignored)
+    # If a one is found,
+
+    # Decode digits from binary (base 2)
+    if base == 2
+
+    # Decode digits from hexadecimal (base 16)
+    # Map Hex values to Letters
+    values = {'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}
+    if base == 16
+
+    # Decode digits from any base (2 up to 36)
 
 
 def encode(number, base):
-    """Encode given number in base 10 to digits in given base.
+    """Encodes a number to digits in any base.
     number: int -- integer representation of number (in base 10)
     base: int -- base to convert to
     return: str -- string representation of number (in given base)"""
