@@ -11,28 +11,25 @@ def is_palindrome(text):
     """A string of characters is a palindrome if it reads the same forwards and backwards, ignoring punctuation, whitespace, and letter casing."""
     assert isinstance(text, str), 'input is not a string: {}'.format(text)
     return is_palindrome_iterative(text)
-    return is_palindrome_recursive(text)
+    # return is_palindrome_recursive(text)
 
 
 def is_palindrome_iterative(text):
     """is_palindrome_iterative return True if input text is a palindrome, and false if not"""
-    # Edge cases? Check if input = None or is weird
-    palindrome = None
-    reverse_text = text.reverse()
-    if text == reverse_text:
-        palindrome = True
-    else:
-        palindome = False
-
-    # Quick check? Does 1st letter = last letter
-    # for i in range(len(text)):
-    #     # check if work spelled same way backward forward
-    #     if blank:
-    #         palindrome = True
-    #     else:
-    #         palindrome = False
-
-    return palindrome
+    # Keep track of first and last index to work from outer letters towards middle.
+    inner = 0
+    outer = len(text)-1
+    # Ensure that middle letter hasn't been surpassed
+    while inner > outer:
+        if text(inner) != text(outer):
+            return False
+            print("Not a palindrome, sorry")
+        if text(inner) == text(outer):
+            # Shift index towards the middle of array
+            inner += 1
+            outer -= 1
+            print("You found a palindrome!")
+        return is_palindrome_iterative(text)
 
 
 def is_palindrome_recursive(text, left=None, right=None):
@@ -58,5 +55,6 @@ def main():
 
 
 if __name__ == '__main__':
-    print(is_palindrome_iterative(text))
-    print(is_palindrome_recursive(text))
+    print(is_palindrome("anna"))
+    # print(is_palindrome_iterative("Butter"))
+    # print(is_palindrome_recursive(text))

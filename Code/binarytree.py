@@ -16,32 +16,36 @@ class BinaryTreeNode(object):
     def is_leaf(self):
         """Return True if this node is a leaf (has no children)."""
         # TODO: Check if both left child and right child have no value
-        if self.data:
-            if data < self.data:
-                if self.left is None:
-                    self.left = Node(data)  # b/c no child
-                else:
-                    self.right.insert(data)
-            else:
-                self.data = data
-        # return True and ...
+        return self.left is None and self.right is None
 
     def is_branch(self):
         """Return True if this node is a branch (has at least one child)."""
-        # TODO: Check if either left child or right child has a value
-        if
-        return ... or ...
+        return self.right is not None or self.left is not None
 
     def height(self):
         """Return the height of this node (the number of edges on the longest
         downward path from this node to a descendant leaf node).
         TODO: Best and worst case running time: ??? under what conditions?"""
-        # TODO: Check if left child has a value and if so calculate its height
-        ...
-        # TODO: Check if right child has a value and if so calculate its height
-        ...
-        # Return one more than the greater of the left height and right height
-        ...
+
+        left_height = 0
+        right_height = 0
+
+        # Check if left child has value
+        if self.left is not None:
+            left_height = self.left.height()
+
+        # Check if right child has value
+        if self.right is not None:
+            right_height = self.right.height()
+
+        if left > right:
+            return left + 1
+
+        if self.is_leaf():
+            return 0
+
+        # return one more than greater of left and right height
+        return right + 1
 
 
 class BinarySearchTree(object):
